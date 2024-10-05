@@ -7,17 +7,17 @@
 
 ## Table of Contents 📕
 
-- [Introduction](#Introduction)
-- [Features](#Features)
-- [Installation](#Installation)
-- [API](#API)
-  - [SPNA.createDB()](#createDB)
+- [Introduction](#introduction-)
+- [Features](#features-)
+- [Installation](#installation-)
+- [API](#api-)
+  - [spna.createDB()](#createDB)
   - [spna.useSequelize()](#useSequelize)
   - [spna.checkBanDevice()](#checkBanDevice)
   - [spna.addRequest()](#addRequest)
   - [spna.codeExist()](#codeExist)
-- [Examples](#Example)
-- [License](#License)
+- [Examples](#example-)
+- [License](#license-️)
 
 ## Introduction 💡
 
