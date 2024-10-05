@@ -3,6 +3,8 @@
 [![npm version](https://badge.fury.io/js/spna.svg)](https://badge.fury.io/js/spna)
 [![license](https://img.shields.io/npm/l/spna.svg)](https://www.npmjs.com/package/spna)
 [![downloads](https://img.shields.io/npm/dt/spna.svg)](https://www.npmjs.com/package/spna)
+![Logo](./images/verify_number.jpg)
+
 
 
 ## Table of Contents 📕
