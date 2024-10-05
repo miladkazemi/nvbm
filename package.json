@@ -1,0 +1,40 @@
+{
+  "name": "spna",
+  "version": "1.0.0",
+  "type": "module",
+  "types": "index.d.ts",
+  "description": "Verification of the number with the code, banning the user and managing repeat requests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miladkazemi/spna.git"
+  },
+ "keywords": [
+  "verification",
+  "number-verification",
+  "authentication",
+  "user-ban",
+  "sequelize",
+  "mysql",
+  "database",
+  "security",
+  "rate-limit",
+  "nodejs",
+  "javascript",
+  "MiladKazemi",
+  "MiladStorm"
+  ],
+  "author": "MiladStOrM",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/miladkazemi/spna/issues"
+  },
+  "homepage": "https://github.com/miladkazemi/spna#readme",
+  "dependencies": {
+    "mysql2": "^3.11.3",
+    "sequelize": "^6.37.4"
+  }
+}
