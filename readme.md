@@ -1,8 +1,9 @@
-# spna - Secure phone number authentication ( User Ban Management ) ⚔️
+# nvbm - number verification & Ban Management ⚔️
 
-[![npm version](https://badge.fury.io/js/spna.svg)](https://badge.fury.io/js/spna)
-[![license](https://img.shields.io/npm/l/spna.svg)](https://www.npmjs.com/package/spna)
-[![downloads](https://img.shields.io/npm/dt/spna.svg)](https://www.npmjs.com/package/spna)
+
+[![npm version](https://badge.fury.io/js/nvbm.svg)](https://badge.fury.io/js/nvbm)
+[![license](https://img.shields.io/npm/l/nvbm.svg)](https://www.npmjs.com/package/nvbm)
+[![downloads](https://img.shields.io/npm/dt/nvbm.svg)](https://www.npmjs.com/package/nvbm)
 ![Logo](./images/verify_number.jpg)
 
 
@@ -13,17 +14,17 @@
 - [Features](#features-)
 - [Installation](#installation-)
 - [API](#api-)
-  - [spna.createDB()](#createDB)
-  - [spna.useSequelize()](#useSequelize)
-  - [spna.checkBanDevice()](#checkBanDevice)
-  - [spna.addRequest()](#addRequest)
-  - [spna.codeExist()](#codeExist)
+  - [nvbm.createDB()](#createDB)
+  - [nvbm.useSequelize()](#useSequelize)
+  - [nvbm.checkBanDevice()](#checkBanDevice)
+  - [nvbm.addRequest()](#addRequest)
+  - [nvbm.codeExist()](#codeExist)
 - [Examples](#example-)
 - [License](#license-️)
 
 ## Introduction 💡
 
-`spna` is a powerful and flexible Node.js package for verifying numbers with codes, managing repeated requests, and banning users based on their device ID. Whether you're building a web or mobile application, `spna` helps you secure your app with authentication mechanisms and rate-limiting strategies.
+`nvbm` is a powerful and flexible Node.js package for verifying numbers with codes, managing repeated requests, and banning users based on their device ID. Whether you're building a web or mobile application, `nvbm` helps you secure your app with authentication mechanisms and rate-limiting strategies.
 
 ## Features 🚀
 
@@ -37,14 +38,14 @@
 You can install the package via npm:
 
 ```bash
-npm install spna --save
+npm install nvbm --save
 ```
 
 ## API ⭐
 
   ### createDB
   - `args:` `dbName`, `username`, `password`, `hostname`
-  - First, create a database and then send its values ​​mentioned above to `spna.createDB()`
+  - First, create a database and then send its values ​​mentioned above to `nvbm.createDB()`
 
   ### useSequelize
   - `args:` `sequelize`
@@ -74,22 +75,22 @@ Pay attention to explanations:
 
 
 ```JS
-import SPNA from 'spna'
+import NVBM from 'nvbm'
 
 const banTimeList = [60, 120, 180, 500, 3600] // array sec: 
 const verifyTimer = 120 // sec ( 2 min )
 
-const spna = new SPNA(banTimeList, verifyTimer)
-await spna.useSequelize(sequelize)
+const nvbm = new NVBM(banTimeList, verifyTimer)
+await nvbm.useSequelize(sequelize) // or: await nvbm.createDB('dbName', 'root', '', 'localhost')
 // first check ban list
-const checkBanDeviceRes = await spna.checkBanDevice("exampleDeviceID") 
+const checkBanDeviceRes = await nvbm.checkBanDevice("exampleDeviceID") // you can log 'checkBanDeviceRes' ( maybe user is ban ( device_id ) )
 if(!checkBanDeviceRes.isBan) {
   // call for send code to your number
-  console.log(await spna.addRequest("exampleNumber", "exampleCode", "exampleDeviceID", checkBanDeviceRes)) // maybe user is ban ( device_id )
+  console.log(await nvbm.addRequest("exampleNumber", "exampleCode", "exampleDeviceID", checkBanDeviceRes)) 
 }
 
 // call for check & verify your number with Code
-console.log(await spna.codeExist("exampleNumber", "exampleCode", "exampleDeviceID")) // if verifyed: true, else: false
+console.log(await nvbm.codeExist("exampleNumber", "exampleCode", "exampleDeviceID")) // if verifyed: true, else: false
 
 ```
 

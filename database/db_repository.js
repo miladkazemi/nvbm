@@ -19,7 +19,7 @@ class dbRepository {
   async checkBanDevice(device_id, createdAt) {
     const firstBanLvl = config.firstBanLvl
     // get data
-    const res = await this.dbModel.spna_verifying.findOne({
+    const res = await this.dbModel.nvbm_verifying.findOne({
       where: {
         "device_id": device_id
       },
@@ -44,12 +44,12 @@ class dbRepository {
 
   async addVerifying(number, code, device_id, createdAt, checkBanDevice) {
     if(checkBanDevice == undefined) {
-      return new Error("SPNA Error: Please call 'await checkBanDevice()' first. then use your response for 'addVerifying(number, code, device_id, createdAt, checkBanDevice)' ");
+      return new Error("nvbm Error: Please call 'await checkBanDevice()' first. then use your response for 'addVerifying(number, code, device_id, createdAt, checkBanDevice)' ");
     }
     if(!checkBanDevice.isBan) {
       if(checkBanDevice.needUpdate) {
         // update verifying
-        await this.dbModel.spna_verifying.update(
+        await this.dbModel.nvbm_verifying.update(
           {"number": number, "createdAt": createdAt, "ban_lvl": checkBanDevice.ban_lvl},
           { where: {
              "device_id": device_id,
@@ -59,7 +59,7 @@ class dbRepository {
       }else {
         // create verifying
         const data = db_args.verifying(number, code, device_id, checkBanDevice.ban_lvl, createdAt)
-        await this.dbModel.spna_verifying.create(data)
+        await this.dbModel.nvbm_verifying.create(data)
       }
 
       // finally:
@@ -69,7 +69,7 @@ class dbRepository {
   }
 
   async codeExist(number, code, device_id) {
-    const data = await this.dbModel.spna_verifying.findOne({
+    const data = await this.dbModel.nvbm_verifying.findOne({
       where: {
         "number": number, 
         "code": code, 
@@ -83,7 +83,7 @@ class dbRepository {
       const elapsedTime = reqAt - data.createdAt
 
       // first del record
-      await this.dbModel.spna_verifying.destroy({
+      await this.dbModel.nvbm_verifying.destroy({
         where: {
           "id": data.id
         }

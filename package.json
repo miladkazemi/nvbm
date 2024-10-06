@@ -1,5 +1,5 @@
 {
-  "name": "spna",
+  "name": "nvbm",
   "version": "1.0.0",
   "type": "module",
   "types": "index.d.ts",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/miladkazemi/spna.git"
+    "url": "git+https://github.com/miladkazemi/nvbm.git"
   },
  "keywords": [
   "verification",
@@ -30,9 +30,9 @@
   "author": "MiladStOrM",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/miladkazemi/spna/issues"
+    "url": "https://github.com/miladkazemi/nvbm/issues"
   },
-  "homepage": "https://github.com/miladkazemi/spna#readme",
+  "homepage": "https://github.com/miladkazemi/nvbm#readme",
   "dependencies": {
     "mysql2": "^3.11.3",
     "sequelize": "^6.37.4"

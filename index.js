@@ -1,7 +1,7 @@
 import dbRepository from "./database/db_repository.js";
 import utils from "./utils/utils.js";
 
-class SPNA {
+class nvbm {
     constructor(banTimeList, verifyTimer) {
         this.dbRepository = undefined
         this.banTimeList = banTimeList
@@ -27,7 +27,7 @@ class SPNA {
 
     _checkDbRepository() {
         if (this.dbRepository === undefined) {
-            throw new Error("SPNA Error: Please call 'await useSequelize()' or 'await createDB()' first.");
+            throw new Error("nvbm Error: Please call 'await useSequelize()' or 'await createDB()' first.");
         }
     }
 
@@ -51,4 +51,4 @@ class SPNA {
 }
 
 
-export default SPNA
+export default nvbm

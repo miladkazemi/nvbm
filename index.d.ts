@@ -24,8 +24,8 @@ interface addVerifyingModel {
 }
 
 
-declare module 'spna' {
-  export default class SPNA {
+declare module 'nvbm' {
+  export default class nvbm {
     constructor(banTimeList: Array<number>, verifyTimer: number)
     // call for init 'createDB' of 'useSequelize'
     createDB(db_name: string, username: string, pass: string, hostname: string): Promise<null>;

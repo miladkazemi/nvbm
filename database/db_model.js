@@ -18,8 +18,8 @@ class dbModel {
 
   async init() {
 
-    // Table: spna_verifying 
-    this.spna_verifying = this.sequelize.define('spna_verifying', {
+    // Table: nvbm_verifying 
+    this.nvbm_verifying = this.sequelize.define('nvbm_verifying', {
       number: {type: DataTypes.STRING},
       code: {type: DataTypes.STRING},
       device_id: {type: DataTypes.STRING, unique: true},
