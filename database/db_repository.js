@@ -50,7 +50,7 @@ class dbRepository {
       if(checkBanDevice.needUpdate) {
         // update verifying
         await this.dbModel.nvbm_verifying.update(
-          {"number": number, "createdAt": createdAt, "ban_lvl": checkBanDevice.ban_lvl},
+          {"number": number, "code": code, "createdAt": createdAt, "ban_lvl": checkBanDevice.ban_lvl},
           { where: {
              "device_id": device_id,
             }

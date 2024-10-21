@@ -1,6 +1,6 @@
 {
   "name": "nvbm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "types": "index.d.ts",
   "description": "Verification of the number with the code, banning the user and managing repeat requests",
